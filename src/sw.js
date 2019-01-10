@@ -22,10 +22,17 @@ if (workbox) {
 
   workbox.precaching.precacheAndRoute([]);
 
-  workbox.routing.registerRoute(
-    /\.(?:js|css|html)$/,
-    workbox.strategies.staleWhileRevalidate(),
-  ); 
+  // workbox.routing.registerRoute(
+  //   /\.(?:js|css|html)$/,
+  //   workbox.strategies.staleWhileRevalidate(),
+  // ); 
+ 
+
+  // workbox.routing.registerRoute(
+  //   /\.(?:js|css|html)$/,
+  //   workbox.strategies.networkFirst()
+  // );
+
 
 //   workbox.routing.registerRoute(
 //     /(.*)articles(.*)\.(?:png|gif|jpg)/,
