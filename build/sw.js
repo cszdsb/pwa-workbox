@@ -23,7 +23,7 @@ if (workbox) {
   workbox.precaching.precacheAndRoute([
   {
     "url": "cacheList/main.css",
-    "revision": "5ede24b04e5d74b4ecbd7f01753750f7"
+    "revision": "c3fe417b4b382db159579f94767ae765"
   },
   {
     "url": "cacheList/aa.jpg",
@@ -35,7 +35,7 @@ if (workbox) {
   },
   {
     "url": "index.html",
-    "revision": "e70782e9428d62a581365f0eb4095798"
+    "revision": "10470b6363d8f095e4465a3a44be7a92"
   }
 ]);
 
