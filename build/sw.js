@@ -23,7 +23,7 @@ if (workbox) {
   workbox.precaching.precacheAndRoute([
   {
     "url": "cacheList/main.css",
-    "revision": "c3fe417b4b382db159579f94767ae765"
+    "revision": "849810c6262eaeb3d2952d4febcac64c"
   },
   {
     "url": "cacheList/aa.jpg",
@@ -35,9 +35,14 @@ if (workbox) {
   },
   {
     "url": "index.html",
-    "revision": "10470b6363d8f095e4465a3a44be7a92"
+    "revision": "80b8ddefc0680c087ac14d18d546019b"
   }
 ]);
+
+  workbox.routing.registerRoute(
+    /\.(?:js|css|html)$/,
+    workbox.strategies.staleWhileRevalidate(),
+  ); 
 
 //   workbox.routing.registerRoute(
 //     /(.*)articles(.*)\.(?:png|gif|jpg)/,
