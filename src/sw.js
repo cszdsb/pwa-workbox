@@ -22,9 +22,25 @@ if (workbox) {
 
   workbox.precaching.precacheAndRoute([]);
 
+  // caches.keys().then(cacheNames => {
+  //     for (const key in cacheNames) {
+  //         const element = object[key];
+  //         caches.delete(element)
+  //     }
+  //    console.log(cacheNames)
+  // })
+
   // workbox.routing.registerRoute(
   //   /\.(?:js|css|html)$/,
-  //   workbox.strategies.staleWhileRevalidate(),
+  //   workbox.strategies.staleWhileRevalidate({
+  //     cacheName: 'cache-1'
+  //   }),
+  // ); 
+  // workbox.routing.registerRoute(
+  //   '/index.html',
+  //   workbox.strategies.staleWhileRevalidate({
+  //     cacheName: 'cache-0'
+  //   }),
   // ); 
  
 

@@ -20,28 +20,19 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox
 if (workbox) {
   console.log(`Yay! Workbox is loaded `);
 
-  workbox.precaching.precacheAndRoute([
-  {
-    "url": "cacheList/main.css",
-    "revision": "61f1c5bb03f1abcfe8402442dee25a76"
-  },
-  {
-    "url": "cacheList/aa.jpg",
-    "revision": "815e098cb20beb3a80a999a2716f8105"
-  },
-  {
-    "url": "cacheList/aa.html",
-    "revision": "048249bae90d2daf220cdaa5ad947bb9"
-  },
-  {
-    "url": "index.html",
-    "revision": "906e4c322c1df674de62230c580c2b58"
-  }
-]);
+  workbox.precaching.precacheAndRoute([]);
 
   // workbox.routing.registerRoute(
   //   /\.(?:js|css|html)$/,
-  //   workbox.strategies.staleWhileRevalidate(),
+  //   workbox.strategies.staleWhileRevalidate({
+  //     cacheName: 'cache-1'
+  //   }),
+  // ); 
+  // workbox.routing.registerRoute(
+  //   '/index.html',
+  //   workbox.strategies.staleWhileRevalidate({
+  //     cacheName: 'cache-0'
+  //   }),
   // ); 
  
 
