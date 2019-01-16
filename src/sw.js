@@ -24,7 +24,7 @@ if (workbox) {
 
   // caches.keys().then(cacheNames => {
   //     for (const key in cacheNames) {
-  //         const element = object[key];
+  //         const element = cacheNames[key];
   //         caches.delete(element)
   //     }
   //    console.log(cacheNames)
