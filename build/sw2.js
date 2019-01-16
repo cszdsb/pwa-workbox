@@ -35,7 +35,7 @@ if (workbox) {
     // };
     workbox.routing.registerRoute(
         matchImgFunction,
-        workbox.strategies.cacheFirst({
+        workbox.strategies.staleWhileRevalidate({
             cacheName: 'tronsmart-jpg',
             plugins: [
                 new workbox.cacheableResponse.Plugin({
@@ -43,8 +43,8 @@ if (workbox) {
                 }),
                 new workbox.expiration.Plugin({
                     maxEntries: 100,
-                    purgeOnQuotaError: true,
-                    maxAgeSeconds: 12 * 60 * 60
+                    // purgeOnQuotaError: true,
+                    // maxAgeSeconds: 12 * 60 * 60
                 })
             ]
         })
