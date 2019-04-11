@@ -14,87 +14,42 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js');
 
 if (workbox) {
-  console.log(`Yay! Workbox is loaded `);
+  console.log(`Yay! Workbox is loaded 🎉`);
 
-  workbox.precaching.precacheAndRoute([]);
-
-  // workbox.routing.registerRoute(
-  //   /\.(?:js|css|html)$/,
-  //   workbox.strategies.staleWhileRevalidate({
-  //     cacheName: 'cache-1'
-  //   }),
-  // ); 
-  // workbox.routing.registerRoute(
-  //   '/index.html',
-  //   workbox.strategies.staleWhileRevalidate({
-  //     cacheName: 'cache-0'
-  //   }),
-  // ); 
- 
-
-  // workbox.routing.registerRoute(
-  //   /\.(?:js|css|html)$/,
-  //   workbox.strategies.networkFirst()
-  // );
-
-
-//   workbox.routing.registerRoute(
-//     /(.*)articles(.*)\.(?:png|gif|jpg)/,
-//     workbox.strategies.cacheFirst({
-//       cacheName: 'images-cache',
-//       plugins: [
-//         new workbox.expiration.Plugin({
-//           maxEntries: 50,
-//           maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
-//         })
-//       ]
-//     })
-//   );
-
-  // const articleHandler = workbox.strategies.networkFirst({
-  //   cacheName: 'articles-cache',
-  //   plugins: [
-  //     new workbox.expiration.Plugin({
-  //       maxEntries: 50,
-  //     })
-  //   ]
-  // });
-
-  // const postHandler = workbox.strategies.cacheFirst({
-  //   cacheName: 'posts-cache',
-  //   plugins: [
-  //     new workbox.expiration.Plugin({
-  //       maxEntries: 50,
-  //     })
-  //   ]
-  // });
-  
-  // workbox.routing.registerRoute(/(.*)article(.*)\.html/, args => {
-  //   return articleHandler.handle(args).then(response => {
-  //       if (!response) {
-  //         return caches.match('pages/offline.html');
-  //       } else if (response.status === 404) {
-  //         return caches.match('pages/404.html');
-  //       }
-  //       return response;
-  //     });
-  // });
-
-  // workbox.routing.registerRoute(/(.*)post(.*)\.html/, args => {
-  //   return postHandler.handle(args).then(response => {
-  //       if (!response) {
-  //         return caches.match('pages/offline.html');
-  //       } else if (response.status === 404) {
-  //         return caches.match('pages/404.html');
-  //       }
-  //       return response;
-  //     });
-  // });
+  workbox.precaching.precacheAndRoute([
+  {
+    "url": "1/cacheList/main.css",
+    "revision": "ebb97ac9d98c185eaf1ef98850797221"
+  },
+  {
+    "url": "cacheList/main.css",
+    "revision": "ebb97ac9d98c185eaf1ef98850797221"
+  },
+  {
+    "url": "style/main.css",
+    "revision": "088186002ef1eac1780dcc990665b967"
+  },
+  {
+    "url": "index.html",
+    "revision": "229b7b9e6e82ec3dbd14c6624e0b35d3"
+  },
+  {
+    "url": "js/animation.js",
+    "revision": "8952a6ec2786e6e8d62a7934bc7f1c1f"
+  },
+  {
+    "url": "images/home/business.jpg",
+    "revision": "9c3ec8d2a8a188bab9ddc212a64a0c1e"
+  },
+  {
+    "url": "images/icon/icon.svg",
+    "revision": "0d077eac3b5028d3543f7e35908d6ecb"
+  }
+]);
 
 } else {
-  console.log(`Boo! Workbox didn't load`);
+  console.log(`Boo! Workbox didn't load 😬`);
 }

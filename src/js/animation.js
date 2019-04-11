@@ -13,14 +13,21 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+var el = document.body;
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js');
+function fadeIn(el) {
+  el.style.opacity = 0;
 
-if (workbox) {
-  console.log(`Yay! Workbox is loaded 🎉`);
+  var tick = function() {
+    el.style.opacity = +el.style.opacity + 0.01;
 
-  workbox.precaching.precacheAndRoute([]);
+    if (+el.style.opacity < 1) {
+      (window.requestAnimationFrame && requestAnimationFrame(tick)) ||
+        setTimeout(tick, 16);
+    }
+  };
 
-} else {
-  console.log(`Boo! Workbox didn't load 😬`);
+  tick();
 }
+
+fadeIn(el);
