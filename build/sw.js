@@ -21,20 +21,16 @@ if (workbox) {
 
   workbox.precaching.precacheAndRoute([
   {
-    "url": "1/cacheList/main.css",
-    "revision": "ebb97ac9d98c185eaf1ef98850797221"
-  },
-  {
     "url": "cacheList/main.css",
     "revision": "ebb97ac9d98c185eaf1ef98850797221"
   },
   {
     "url": "style/main.css",
-    "revision": "088186002ef1eac1780dcc990665b967"
+    "revision": "c4f1e844b31bec3e73ef3d039088d85b"
   },
   {
     "url": "index.html",
-    "revision": "229b7b9e6e82ec3dbd14c6624e0b35d3"
+    "revision": "4cd16b3c8b3d4f7cf569eba8ec47becf"
   },
   {
     "url": "js/animation.js",
